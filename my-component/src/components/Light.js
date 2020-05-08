@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Light = () => {
+const Light = (color) => {
+    color = '';
     return (
     <mesh>
-        <ambientLight intensity={1} color={0xf70b0b}/>
-        <pointLight intensity={2} position={[2, -5, 5]} color={0x38b6ff}/>
+        <ambientLight intensity={1} color={color}/>
+        <pointLight intensity={1} position={[2, -5, 5]} color={color}/>
     </mesh>
     );
 }
