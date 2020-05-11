@@ -10,7 +10,6 @@ const World = (props) =>{
     const mesh = useRef();
     const cloudsRot = useRef();
 
-
     const earth = useMemo(() => new THREE.TextureLoader().load(earthImg), [earthImg]);
     const moon = useMemo(() => new THREE.TextureLoader().load(moonImg), [moonImg]);
     const cloud = useMemo(() => new THREE.TextureLoader().load(cloudImg), [cloudImg]);
@@ -26,7 +25,7 @@ const World = (props) =>{
         <group ref={mesh} scale={[1, 1, 1]} {...props}>
             <mesh ref={mesh}>
                 <sphereBufferGeometry attach='geometry' args={[2, 32, 32]}/>
-                <meshBasicMaterial attach='material' map={earth}  
+                <meshStandardMaterial attach='material' map={earth}  
                 fog={false}
                 />
             </mesh>
